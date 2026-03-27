@@ -1,10 +1,10 @@
-# Winy
+# RAGChatBot
 
 To use GPU in docker for ollama follow these [steps](https://hub.docker.com/r/ollama/ollama)
 
 -- 
 # Steps to run  
-1 - docker compose up --build (at the winy directory level)
+1 - docker compose up --build (at the RAGChatBot directory level)
 2 - # http://localhost:6333/
  - # http://0.0.0.0:8501/
  -# http://localhost:8501/ 
@@ -22,7 +22,7 @@ rm -f ~/.docker/buildx/current
 
 Then run:
 ```bash
-docker compose build winy
+docker compose build RAGChatBot
 ```
 
 ## 2) SSL Certificate Error While Installing Python Packages
@@ -38,5 +38,5 @@ Fix already applied in `app/Dockerfile`:
 
 Rebuild command:
 ```bash
-docker compose build --no-cache winy
+docker compose build --no-cache RAGChatBot
 ```

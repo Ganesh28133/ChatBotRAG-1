@@ -3,7 +3,7 @@ from ollama import Client
 import sqlite3
 import os
 from qdrant_client import QdrantClient
-st.set_page_config(page_title="Winy", page_icon="🍷", layout="centered")
+st.set_page_config(page_title="RAG ChatBot", page_icon="🤖", layout="centered")
 
 QDRANT_CLIENT_URL = os.environ["QDRANT_CLIENT"] 
 OLLAMA_URL = os.environ["OLLAMA"]
@@ -45,7 +45,7 @@ def add_wine_links(response_text):
     return response_text
 
 def show():
-    st.title("🍷 Winy")
+    st.title("🤖 RAG ChatBot")
 
     if "messages" not in st.session_state:
         st.session_state["messages"] = [{"role": "assistant", 

@@ -7,19 +7,19 @@ services:
     volumes:
       - qdrant_data:/qdrant/storage # Mounts the qdrant_data volume to /qdrant/storage in the container
 
-  winy:
+  ragchatbot:
     build:
       context: ./app # Specifies the build context as the ./app directory
       dockerfile: Dockerfile # Uses the Dockerfile in the build context
     environment:
       - QDRANT_CLIENT=http://qdrant:6333
       - OLLAMA=http://ollama:11434
-    container_name: winy # Sets the container name to winy
+    container_name: RAGChatBot # Sets the container name to RAGChatBot
     ports:
       - "8501:8501" # Maps port 8501 on the host to port 8501 in the container
     depends_on:
-      - qdrant # Ensures the qdrant service is started before winy
-      # - ollama # Ensures the ollama service is started before winy
+      - qdrant # Ensures the qdrant service is started before RAGChatBot
+      # - ollama # Ensures the ollama service is started before RAGChatBot
 
   # ollama:
   #   image: ollama/ollama # Specifies the Ollama image to use
