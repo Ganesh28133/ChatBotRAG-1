@@ -14,6 +14,8 @@ services:
     environment:
       - QDRANT_CLIENT=http://qdrant:6333
       - OLLAMA=http://ollama:11434
+      - LLM_PROVIDER=qwen                                          # Switch: "ollama" or "qwen"
+      - QWEN_API_URL=http://wiphack30qx5aw.cloudloka.com:8000/v1  # Qwen API base URL
     container_name: RAGChatBot # Sets the container name to RAGChatBot
     ports:
       - "8501:8501" # Maps port 8501 on the host to port 8501 in the container
